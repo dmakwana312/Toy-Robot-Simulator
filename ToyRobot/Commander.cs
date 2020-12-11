@@ -116,6 +116,10 @@ namespace ToyRobot
                         break;
                 }
             }
+            else
+            {
+                Console.WriteLine("Place A Robot First");
+            }
 
         }
 
@@ -148,7 +152,7 @@ namespace ToyRobot
             }
             else
             {
-                return "No Toy Placed";
+                return "No Toy To Report On";
             }
         }
 

@@ -10,7 +10,8 @@ namespace ToyRobot
         {
 
             runCommands(File.ReadAllLines(GetDirectory() + @"\commands.txt"));
-
+            Console.WriteLine("Press Any Key To Exit...");
+            Console.ReadLine();
         }
 
         private static void runCommands(String[] commands)
