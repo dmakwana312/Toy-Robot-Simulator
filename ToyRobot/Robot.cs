@@ -57,7 +57,6 @@ namespace ToyRobot
                     break;
 
             }
-            Console.WriteLine("Now Facing " + facingDirection);
         }
 
         // Get X position
