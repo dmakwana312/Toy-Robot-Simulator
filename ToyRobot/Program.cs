@@ -15,10 +15,9 @@ namespace ToyRobot
 
         private static void runCommands(String[] commands)
         {
-            foreach(string command in commands)
-            {
-                Console.WriteLine(command);
-            }
+            Commander commander = new Commander(commands);
+            commander.StartRun();
+            
         }
 
         private static string GetDirectory()

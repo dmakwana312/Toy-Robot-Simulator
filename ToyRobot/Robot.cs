@@ -42,6 +42,7 @@ namespace ToyRobot
                     x += moveUnits;
                     break;
             }
+            Console.WriteLine("Moved " + facingDirection);
         }
 
         // Turn robot based on paramter
@@ -57,6 +58,7 @@ namespace ToyRobot
                     break;
 
             }
+            Console.WriteLine("Now Facing " + facingDirection);
         }
 
         // Get X position
@@ -85,7 +87,7 @@ namespace ToyRobot
         // Report state of robot
         public string Report()
         {
-            return "Position: " + x + ", " + y + " - Facing: " + facingDirection.ToString(); 
+            return "Position: (" + x + ", " + y + ") - Facing: " + facingDirection.ToString(); 
         }
 
     }

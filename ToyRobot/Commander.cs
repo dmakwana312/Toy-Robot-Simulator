@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ToyRobot
 {
@@ -11,31 +12,82 @@ namespace ToyRobot
         private string[] commands;
         private Robot toy;
 
+        // Check if toy has been placed
         private bool toyPlaced;
+
+        // Regex patterns for commands
+        private const string placePattern = @"\bPLACE [0-4],[0-4],(NORTH|EAST|WEST|SOUTH)$";
+        private const string movePattern = @"\bMOVE$";
+        private const string leftPattern = @"\bLEFT$";
+        private const string rightPattern = @"\bRIGHT$";
+        private const string reportPattern = @"\bREPORT$";
+
+
 
         // Constructor to set list of commands and create new table
         public Commander(string[] commands)
         {
             table = new Table(5, 5);
             this.commands = commands;
-
             toyPlaced = false;
         }
 
         // Start running commands
         public void StartRun()
         {
+            
+            foreach(string command in commands)
+            {
+
+                if (Regex.IsMatch(command, placePattern)) {
+                    Place(command);
+                }
+                else if (Regex.IsMatch(command, movePattern) || Regex.IsMatch(command, leftPattern) || (Regex.IsMatch(command, rightPattern)))
+                {
+                    MoveRobot(command);
+                }
+                else if (Regex.IsMatch(command, reportPattern))
+                {
+                    Console.WriteLine(Report());
+                }
+                else
+                {
+                    Console.WriteLine("Invalid");
+                }
+            }
+
+            
 
         }
 
         // Place robot
-        public void Place(int x, int y, FacingDirection facingDirection)
+        public void Place(string command)
         {
-            if (table.IsValidPosition(x, y))
+            string[] splitCommand = command.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int x;
+            int y;
+            FacingDirection facingDirection;
+
+            bool xSet = Int32.TryParse(splitCommand[1], out x);
+            bool ySet = Int32.TryParse(splitCommand[2], out y);
+            bool facingDirectionSet = Enum.TryParse(splitCommand[3], true, out facingDirection);
+
+
+            if(xSet && ySet && facingDirectionSet)
             {
-                toy = new Robot(x, y, facingDirection);
-                toyPlaced = true;
+
+                if (table.IsValidPosition(x, y))
+                {
+                    toy = new Robot(x, y, facingDirection);
+                    toyPlaced = true;
+                }
             }
+            else
+            {
+                Console.WriteLine("Invalid Place Command");
+            }
+            
 
         }
 
@@ -50,6 +102,10 @@ namespace ToyRobot
                         if (CheckIfMoveable())
                         {
                             toy.Move();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Can't move further in this direction. Will fall off!");
                         }
                         break;
                     case "RIGHT":

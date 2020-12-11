@@ -19,7 +19,8 @@ namespace ToyRobot
         // Check if position is valid
         public bool IsValidPosition(int xPosition, int yPosition)
         {
-            if(xPosition < 0 || xPosition >= width || yPosition < 0 || yPosition >= height)
+            
+            if (xPosition < 0 || xPosition >= width || yPosition < 0 || yPosition >= height)
             {
                 return false;
             }
