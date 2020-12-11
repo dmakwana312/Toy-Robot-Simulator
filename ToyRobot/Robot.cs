@@ -42,7 +42,6 @@ namespace ToyRobot
                     x += moveUnits;
                     break;
             }
-            Console.WriteLine("Moved " + facingDirection);
         }
 
         // Turn robot based on paramter

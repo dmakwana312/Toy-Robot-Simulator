@@ -52,7 +52,7 @@ namespace ToyRobot
                 }
                 else
                 {
-                    Console.WriteLine("Invalid");
+                    Console.WriteLine("Invalid Command");
                 }
             }
 
@@ -144,6 +144,7 @@ namespace ToyRobot
             }
         }
 
+        // Get report of robot
         public string Report()
         {
             if (toyPlaced)
@@ -154,6 +155,24 @@ namespace ToyRobot
             {
                 return "No Toy To Report On";
             }
+        }
+
+        // Get Table object
+        public Table GetTable()
+        {
+            return table;
+        }
+
+        // Get commands
+        public string[] GetCommands()
+        {
+            return commands;
+        }
+
+        // Get Robot object
+        public Robot GetRobot()
+        {
+            return toy;
         }
 
     }
