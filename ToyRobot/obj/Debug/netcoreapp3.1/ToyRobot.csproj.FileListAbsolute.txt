@@ -1,0 +1,13 @@
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\bin\Debug\netcoreapp3.1\ToyRobot.exe
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\bin\Debug\netcoreapp3.1\ToyRobot.deps.json
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\bin\Debug\netcoreapp3.1\ToyRobot.runtimeconfig.json
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\bin\Debug\netcoreapp3.1\ToyRobot.runtimeconfig.dev.json
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\bin\Debug\netcoreapp3.1\ToyRobot.dll
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\bin\Debug\netcoreapp3.1\ToyRobot.pdb
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.csprojAssemblyReference.cache
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.AssemblyInfoInputs.cache
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.AssemblyInfo.cs
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.csproj.CoreCompileInputs.cache
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.dll
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.pdb
+C:\Users\Dipesh\Desktop\ToyRobot\ToyRobot\obj\Debug\netcoreapp3.1\ToyRobot.genruntimeconfig.cache

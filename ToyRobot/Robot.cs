@@ -59,6 +59,35 @@ namespace ToyRobot
             }
         }
 
+        // Get X position
+        public int getX()
+        {
+            return x;
+        }
+
+        // Get y position
+        public int getY()
+        {
+            return y;
+        }
+
+        public int getMovementUnits()
+        {
+            return moveUnits;
+        }
+
+        // Get Facing Direction
+        public FacingDirection GetFacingDirection()
+        {
+            return facingDirection;
+        }
+
+        // Report state of robot
+        public string Report()
+        {
+            return "Position: " + x + ", " + y + " - Facing: " + facingDirection.ToString(); 
+        }
+
     }
 
 
