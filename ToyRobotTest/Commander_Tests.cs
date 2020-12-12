@@ -109,11 +109,11 @@ namespace ToyRobotTest
 
         // Test Report Method Where Robot Is Not Placed
         [TestMethod]
-        public void Test_Report_Where_Robot_Is_Not_Placed_Should_Return_Empty_String()
+        public void Test_Report_Where_Robot_Is_Not_Placed_Should_Return_Error_Message_String()
         {
             // Arrange
             commander = new Commander(new string[] { });
-            string expectedReport = string.Empty;
+            string expectedReport = "Toy Robot Not Placed";
 
             // Act
             string actualReport = commander.Report();

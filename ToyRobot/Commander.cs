@@ -111,6 +111,10 @@ namespace ToyRobot
                         break;
                 }
             }
+            else
+            {
+                Console.WriteLine("Toy Robot Not Placed");
+            }
 
         }
 
@@ -142,7 +146,7 @@ namespace ToyRobot
             {
                 return toy.Report();
             }
-            return string.Empty ;
+            return "Toy Robot Not Placed" ;
         }
 
     }
