@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ToyRobot
 {
-    class InvalidCommandException : Exception
+    public class InvalidCommandException : Exception
     {
         public InvalidCommandException()
         {

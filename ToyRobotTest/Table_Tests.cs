@@ -8,7 +8,7 @@ namespace ToyRobotTest
 
         private Table table;
 
-        // Create Table object to be used in all objects
+        // Create Table object to be used in all tests
         [TestInitialize]
         public void TestInitialize()
         {
