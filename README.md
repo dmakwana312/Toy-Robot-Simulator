@@ -2,9 +2,9 @@
 
 ## Instructions
 
-Navigate to ***/ToyRobot/bin/Debug/netcoreapp3.1/*** and execute ***ToyRobot.exe*** file.
+Navigate to ***/ToyRobot/bin/Release/netcoreapp3.1*** and execute ***ToyRobot.exe*** file.
 
-Commands for the robot can be found in the same directory in the ***commands.txt*** file.
+Commands for the robot can be found within the same directory in the ***commands.txt*** file.
 
 ## Problem
 
