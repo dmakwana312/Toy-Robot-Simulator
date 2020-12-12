@@ -17,7 +17,15 @@ namespace ToyRobot
         private static void runCommands(String[] commands)
         {
             Commander commander = new Commander(commands);
-            commander.StartRun();
+            try
+            {
+                commander.StartRun();
+            }
+            catch(InvalidCommandException e)
+            {
+                Console.WriteLine("Error: " + e);
+            }
+            
             
         }
 

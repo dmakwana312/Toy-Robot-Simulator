@@ -52,7 +52,7 @@ namespace ToyRobot
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Command");
+                    throw new InvalidCommandException("Command Format Is Invalid");
                 }
             }
 
@@ -85,7 +85,7 @@ namespace ToyRobot
             }
             else
             {
-                Console.WriteLine("Invalid Place Command");
+                throw new InvalidCommandException("Command Format Is Invalid");
             }
             
 
@@ -116,10 +116,7 @@ namespace ToyRobot
                         break;
                 }
             }
-            else
-            {
-                Console.WriteLine("Place A Robot First");
-            }
+            
 
         }
 
@@ -151,10 +148,7 @@ namespace ToyRobot
             {
                 return toy.Report();
             }
-            else
-            {
-                return "No Toy To Report On";
-            }
+            return string.Empty ;
         }
 
         // Get Table object
