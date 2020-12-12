@@ -83,12 +83,7 @@ namespace ToyRobot
                     toyPlaced = true;
                 }
             }
-            else
-            {
-                throw new InvalidCommandException("Command Format Is Invalid");
-            }
             
-
         }
 
         // Move robot
@@ -116,7 +111,6 @@ namespace ToyRobot
                         break;
                 }
             }
-            
 
         }
 
@@ -149,24 +143,6 @@ namespace ToyRobot
                 return toy.Report();
             }
             return string.Empty ;
-        }
-
-        // Get Table object
-        public Table GetTable()
-        {
-            return table;
-        }
-
-        // Get commands
-        public string[] GetCommands()
-        {
-            return commands;
-        }
-
-        // Get Robot object
-        public Robot GetRobot()
-        {
-            return toy;
         }
 
     }
