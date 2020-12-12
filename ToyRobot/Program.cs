@@ -8,10 +8,21 @@ namespace ToyRobot
     {
         static void Main(string[] args)
         {
-
-            runCommands(File.ReadAllLines(GetDirectory() + @"\commands.txt"));
-            Console.WriteLine("Press Any Key To Exit...");
-            Console.ReadLine();
+            try
+            {
+                runCommands(File.ReadAllLines(GetDirectory() + @"\commands.txt"));
+                
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+            }
+            finally
+            {
+                Console.WriteLine("Press Any Key To Exit...");
+                Console.ReadLine();
+            }
+            
         }
 
         private static void runCommands(String[] commands)
@@ -31,7 +42,17 @@ namespace ToyRobot
 
         private static string GetDirectory()
         {
-            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            try
+            {
+                return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Error: " + e);
+            }
+            
+            return string.Empty;
+            
         }
     }
 }
