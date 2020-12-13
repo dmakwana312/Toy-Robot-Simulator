@@ -20,7 +20,7 @@ namespace ToyRobotTest
         [TestMethod]
         public void Test_IsValidPosition_Where_New_Position_Is_Valid_Should_Return_True()
         {
-            
+
             // Act 
             bool actualValue = table.IsValidPosition(2, 2);
 
@@ -32,7 +32,7 @@ namespace ToyRobotTest
         [TestMethod]
         public void Test_IsValidPosition_Moving_North_Where_New_Position_Is_Invalid_Should_Return_False()
         {
-            
+
             // Act 
             bool actualValue = table.IsValidPosition(2, 5);
 
@@ -44,7 +44,7 @@ namespace ToyRobotTest
         [TestMethod]
         public void Test_IsValidPosition_Moving_East_Where_New_Position_Is_Invalid_Should_Return_False()
         {
-            
+
             // Act 
             bool actualValue = table.IsValidPosition(5, 3);
 
@@ -56,7 +56,7 @@ namespace ToyRobotTest
         [TestMethod]
         public void Test_IsValidPosition_Moving_South_Where_New_Position_Is_Invalid_Should_Return_False()
         {
-            
+
             // Act 
             bool actualValue = table.IsValidPosition(2, -1);
 
@@ -68,7 +68,7 @@ namespace ToyRobotTest
         [TestMethod]
         public void Test_IsValidPosition_Moving_West_Where_New_Position_Is_Invalid_Should_Return_False()
         {
-            
+
             // Act 
             bool actualValue = table.IsValidPosition(-1, 2);
 

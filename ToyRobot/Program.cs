@@ -10,21 +10,25 @@ namespace ToyRobot
         {
             try
             {
+                // Retrieve commands from text file and run commands
                 runCommands(File.ReadAllLines(GetDirectory() + @"\commands.txt"));
-                
+
             }
-            catch(Exception e)
+            // Catch errors
+            catch (Exception e)
             {
                 Console.WriteLine("Error: " + e);
             }
             finally
             {
+                // Buffer to prevent application closing instantly, upon completion
                 Console.WriteLine("Press Any Key To Exit...");
                 Console.ReadLine();
             }
-            
+
         }
 
+        // Run commands
         private static void runCommands(String[] commands)
         {
             Commander commander = new Commander(commands);
@@ -32,27 +36,29 @@ namespace ToyRobot
             {
                 commander.StartRun();
             }
-            catch(InvalidCommandException e)
+            catch (InvalidCommandException e)
             {
                 Console.WriteLine("Error: " + e);
             }
-            
-            
+
+
         }
 
+
+        // Retrieve working direction
         private static string GetDirectory()
         {
             try
             {
                 return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Error: " + e);
             }
-            
+
             return string.Empty;
-            
+
         }
     }
 }

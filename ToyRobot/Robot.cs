@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ToyRobot
+﻿namespace ToyRobot
 {
     public class Robot
     {
@@ -85,7 +81,7 @@ namespace ToyRobot
         // Report state of robot
         public string Report()
         {
-            return "Position: (" + x + ", " + y + ") - Facing: " + facingDirection.ToString(); 
+            return "Position: (" + x + ", " + y + ") - Facing: " + facingDirection.ToString();
         }
 
     }

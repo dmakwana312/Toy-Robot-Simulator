@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ToyRobot
@@ -35,11 +33,12 @@ namespace ToyRobot
         // Start running commands
         public void StartRun()
         {
-            
-            foreach(string command in commands)
+
+            foreach (string command in commands)
             {
 
-                if (Regex.IsMatch(command, placePattern)) {
+                if (Regex.IsMatch(command, placePattern))
+                {
                     Place(command);
                 }
                 else if (Regex.IsMatch(command, movePattern) || Regex.IsMatch(command, leftPattern) || (Regex.IsMatch(command, rightPattern)))
@@ -56,25 +55,28 @@ namespace ToyRobot
                 }
             }
 
-            
+
 
         }
 
         // Place robot
         public void Place(string command)
         {
+            // Split command into array
             string[] splitCommand = command.Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
+            // Variables to store parameters of place command
             int x;
             int y;
             FacingDirection facingDirection;
 
+            // Parse to correct to data type
             bool xSet = Int32.TryParse(splitCommand[1], out x);
             bool ySet = Int32.TryParse(splitCommand[2], out y);
             bool facingDirectionSet = Enum.TryParse(splitCommand[3], true, out facingDirection);
 
-
-            if(xSet && ySet && facingDirectionSet)
+            // If attributes are set, place robot
+            if (xSet && ySet && facingDirectionSet)
             {
 
                 if (table.IsValidPosition(x, y))
@@ -83,17 +85,19 @@ namespace ToyRobot
                     toyPlaced = true;
                 }
             }
-            
+
         }
 
         // Move robot
         public void MoveRobot(string movement)
         {
+            // If Toy is placed, run correct command
             if (toyPlaced)
             {
                 switch (movement)
                 {
                     case "MOVE":
+                        // If it is possible to robot in direction faced, move
                         if (CheckIfMoveable())
                         {
                             toy.Move();
@@ -146,7 +150,7 @@ namespace ToyRobot
             {
                 return toy.Report();
             }
-            return "Toy Robot Not Placed" ;
+            return "Toy Robot Not Placed";
         }
 
     }
